@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Peak from './Peak';
 
 class SingleRange extends Component {
   constructor(props) {
@@ -23,9 +24,23 @@ class SingleRange extends Component {
   }
   render() {
     const { range } = this.state;
-    return (
-      <h3>{ range.Name }</h3>    
-    )
+    const { mountains } = range;
+    if( mountains !== undefined ) {
+      return (
+        <div className="wrapper">
+          <h3>{ range.Name }</h3>
+          <h4>Rendered Mountains:</h4>
+          {
+            mountains.map( mountain => {
+              return (
+                <Peak peak={ mountain } key={ mountain.ID } />
+              )
+            })
+          }    
+        </div>
+      )
+    }
+    return <p>Test</p>
   }
 }
 

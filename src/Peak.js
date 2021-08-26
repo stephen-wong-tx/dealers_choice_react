@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Peak = props => {
-  const { ID } = props;
-  return (
-    <div className="entryContainer" key={ ID }>
-      <h2>{ props["Name"] }</h2>
-      <div id={ `button-${ID}` } className="details-container">
-        <a href={ `#${ID}` }>See details</a>
+class Peak extends Component {
+  render() {
+    const { peak } = this.props;
+    console.log("mounting individual peak props:", peak)
+    return(
+      <div className="entryContainer" key={ peak.ID }>
+        <h2>{ peak["Mountain Peak"] }</h2>
+        <div id={ `button-${peak.ID}` } className="details-container">
+          <a href={ `#${peak.ID}` }>See details</a>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Peak
