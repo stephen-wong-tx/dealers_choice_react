@@ -4,10 +4,16 @@ module.exports = app;
 
 const path = require('path');
 const volleyball = require('volleyball');
+const { static } = express;
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 app.use(volleyball)
+
+app.use('/dist', static(path.join(__dirname, '..', 'dist')));
+
+app.use(express.static(path.join(__dirname, '..', 'public')))
+
 
 app.use('/api', require('./api'))
 
@@ -33,12 +39,3 @@ app.get('/', (req, res, next) => {
     next(error)
   }
 })
-
-// app.get('/test', async (req, res, next) => {
-//   try{
-//     res.send(`<h1>This is a test</h1>`)
-//   }
-//   catch(error){
-//     next(error)
-//   }
-// })
