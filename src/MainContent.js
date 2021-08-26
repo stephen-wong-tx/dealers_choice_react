@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Range from './Range';
+import MainHeading from './MainHeading';
 
 class MainContent extends Component {
   render() {
@@ -7,9 +8,9 @@ class MainContent extends Component {
     console.log('Mounting Props to MainContent.props:' , allRanges)
     return (
       <div id="main-content">
-      <h1>The Fourtneeners</h1>
-      <h2>Made With React</h2>
-      <p className="description"> Fourteener fȯr-ˈtēn-ər<br /> A mountain peek with an elevation of at least 14,000 ft (4267 m).</p>
+        {
+          <MainHeading />
+        }
         <div id="entry-list">
             <div className="entryContainer">
               <h2>The Best Mountain Range Ever</h2>

@@ -30,10 +30,11 @@ export default class Main extends Component {
         }
         <div className='wrapper'>
           {
-            <MainContent allRanges={ this.state.allRanges }/>
-          }
-          {
-            !!selectedRange && <SingleRange range={ selectedRange }/>
+            selectedRange.length > 0 ? (
+              <SingleRange range={ selectedRange }/>
+            ) : (
+              <MainContent allRanges={ this.state.allRanges } />
+            )
           }
         </div>
       </div>
