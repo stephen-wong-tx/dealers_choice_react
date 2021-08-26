@@ -12,11 +12,6 @@ class MainContent extends Component {
           <MainHeading />
         }
         <div id="entry-list">
-            <div className="entryContainer">
-              <h2>The Best Mountain Range Ever</h2>
-              <div id="button-best" className="details-container"><a href="/mountains/best">See details</a></div>
-            </div>
-            <h3>Rendered Mountains:</h3>
             { allRanges.map( range => {
                return (
                 <Range range={ range } key={ range.ID } /> 

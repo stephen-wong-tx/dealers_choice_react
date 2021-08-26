@@ -74,19 +74,24 @@ h2 {
 }
 
 #nav ul {
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: rgb(76, 121, 170);
   display: block;
-  justify-content: center;
   align-items: center;
 }
 
 #nav li {
   float: left;
   vertical-align: center;
+}
+
+.right {
+  float: right !important;
 }
 
 li img {
@@ -447,11 +452,11 @@ i:hover {
 
 .indiv-entry-container ul{
   list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 .indiv-entry-container li{
@@ -472,6 +477,14 @@ i:hover {
 
 #indiv-body {
   background-color:#d3d3d3;
+  /* background-image: url("https://www.14ers.com/photos/wilsongroup/peakphotos/large/200803_Wils01.jpg"); */
+  background-blend-mode: multiply;
+  background-color:rgb(228, 228, 228);
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat:round
+  background-size: auto;
 }
 
 #indiv-body #nav ul {
@@ -507,4 +520,105 @@ i:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rangePeaksContainer {
+  border-radius: 5px;
+  padding: 2rem;
+  background: transparent;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rangePeaksContainer ul {
+  flex: 1;
+  background-color: transparent;
+  border-radius: 5px;
+  list-style-type: none;
+  padding: 0 .5rem 0 .5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul#peak-list {
+  margin: 0;
+}
+
+.li-border {
+  border: 2px solid black;
+  background-color: rgb(248, 244, 227);
+  border-radius: 5px; 
+  margin: 1rem;
+}
+
+li.peak {
+  padding: .3em 0 0 0;
+  text-align: center;
+  color: rgb(8, 39, 57); 
+  background-color: rgb(248, 244, 227); 
+  margin: 2rem .5rem .5rem .5rem;
+  font-size: .9rem;
+  font-family: Courier, monospace;
+  font-weight: 400;
+  cursor: pointer;
+  border: transparent;
+  box-shadow: 1px 1px 5px 2px rgb(211, 209, 203);
+  border-radius: 10px;
+  width: 12rem;
+  transition: .3s ease;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* -webkit-clip-path: polygon(0 0, 19% 0, 19% 21%, 85% 21%, 85% 0, 100% 6%, 100% 100%, 73% 100%, 59% 100%, 27% 100%, 27% 100%, 0 100%);
+  clip-path: polygon(0 0, 19% 0, 19% 21%, 85% 21%, 85% 0, 100% 6%, 100% 100%, 73% 100%, 59% 100%, 27% 100%, 27% 100%, 0 100%); */
+}
+
+li.peak h1, li.peak h2 {
+  color: #485f6e
+}
+
+@media screen and (max-width: 866px) {
+  ul#peak-list {
+    justify-content: center !important;
+  }
+  li.peak {
+    width: 20rem;
+  }
+}
+
+li.peak:after {
+  content: "details";
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  vertical-align: center;
+  /* color:rgb(145, 143, 131); */
+  color: transparent;
+  padding: 1em 1rem 1rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  /* height: 3.8rem; */
+  background-color: transparent;
+  cursor: pointer;
+}
+
+li.peak:hover:after {
+  background-color:#c96131;
+  color: white;
+  transition: .1s ease-in;
+}
+
+li.peak:hover {
+  margin: 1rem;
+}
+
+/* #SinglePeak {
+  padding: 5em;
+} */
+
+#single-hero {
+  margin: 1em;
+  background-color: #c96131;
 }
